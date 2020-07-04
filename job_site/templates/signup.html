@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--Header section-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Setting the title name-->
+    <title>Portal</title>
+
+    <!--Adding the icon to the site-->
+    <link rel="icon" sizes="32x32" href="{{ url_for('static', filename='Images/title_logo/favicon.png')}}">
+
+    <!--Adding the style sheet-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Adding bootstrap links -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Amita' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+  <!--Body Section-->
+  <body>
+
+    <!--Adiing  scripts to the site-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+		<script src="{{ url_for('static', filename='scripts/verify.js') }}"></script>
+
+    <!--Navbar section-->
+    <nav class="navbar navbar-expand-md navbar-dark bg-light sticky-top ">
+      <div class="container-fluid" align="center">
+        <a class="navbr-brand" href="{{ url_for('.home')}}"><img src="{{ url_for('static', filename='Images/title_logo/favicon.png')}}"></a>
+        <div class="mr-auto disp_titles" align="center">
+          <p style="font-size:20px;" color="gray" >Portal</p>
+        </div>
+        <button class="navbar-toggler" style="background-color:#B1B1B6;" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">
+                <button class="btn btn-outline-secondary">
+                  <font>Home</font>
+                </button>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--Navbar end-->
+
+
+    <!--Main content section-->
+    <section class="container container-fluid my-4" id=home>
+
+      <!--Intro-->
+      <!--Intro end-->
+
+      <!--Signup form-->
+      <span id="mseg" style="color:gray;font-size:20px;"></span>
+        <div class="row">
+
+          <div class="col-md-4 col-sm-12">
+          </div>
+
+          <div class="col-md-4 col-sm-12">
+
+            <div class="card">
+              <p class="h4 text-center py-4 card-header">Sign up</p>
+              <div class="card-body">
+
+                  <div class="wrap-input100 validate-input mt-2">
+                    <input class="input100" id="disp-name" type="text" name="uname" placeholder="User name" style="background-color: rgba(245, 244, 249, 0.2)">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                      <i class="fa fa-user" aria-hidden="true"></i>
+                    </span>
+                  </div>
+
+                  <span style="color:red;" id="err_name"></span>
+
+
+                  <div class="wrap-input100 validate-input mt-4">
+                    <input class="input100" id="email" type="email" name="email" placeholder="Email" style="background-color: rgba(245, 244, 249, 0.2)">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                      <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </span>
+                  </div>
+
+                  <span style="color:red" id="err_mail"></span>
+
+
+                  <div class="wrap-input100 validate-input mt-4">
+                    <input class="input100" id="password" type="password" name="pass" placeholder="Password" style="background-color: rgba(245, 244, 249, 0.2)">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                      <i class="fa fa-lock" aria-hidden="true"></i>
+                    </span>
+                  </div>
+
+                  <span style="color:red" id="err_pass"></span>
+
+                  <div class="wrap-input100 validate-input mt-4">
+                    <input class="input100" id="cpass" type="password" name="cpass" placeholder="confirm Password" style="background-color: rgba(245, 244, 249, 0.2)">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                      <i class="fa fa-lock" aria-hidden="true"></i>
+                    </span>
+                  </div>
+
+                  <span style="color:red" id="err_cpass"></span>
+
+                  <div class="wrap-input100 validate-input mt-4">
+                    <select class="form-control" id="type" style="background-color: rgba(245, 244, 249, 0.2)">
+                      <option value="seek">Job seeker</option>
+                      <option value="host">Job Provaider</option>
+                    </select>
+                    <span class="focus-input100"></span>
+                  </div>
+
+                  <span style="color:red" id="err"></span>
+
+                  <div class="text-center">
+      							<button  class="btn btn-primary" id="signup-btn" onclick="sign_up()">Register</button>
+      						</div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-md-4 col-sm-12">
+          </div>
+
+        </div>
+      <!--Signup form end-->
+    </section>
+
+    <!--Main content end-->
+
+    <!--Footer section-->
+
+    <!-- Footer -->
+    <footer class="page-footer font-small bg-light pt-4">
+
+      <!-- Footer Elements -->
+      <div class="container">
+
+        <!-- Social buttons -->
+        <ul class="list-unstyled list-inline text-center">
+          <li class="list-inline-item">
+            <a class="fb-ic mr-3" role="button"><i class="fab fa-md fa-facebook-f"></i></a>
+          </li>
+          <li class="list-inline-item">
+            <a class="tw-ic mr-3" role="button"><i class="fab fa-md fa-twitter"></i></a>
+          </li>
+          <li class="list-inline-item">
+            <a class="email-ic mr-3" role="button"><i class="far fa-md fa-envelope"></i></a>
+          </li>
+          <li class="list-inline-item">
+            <a class="li-ic mr-3" role="button"><i class="fab fa-md fa-linkedin-in"></i></a>
+          </li>
+        </ul>
+    <!-- Social buttons -->
+
+  </div>
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="#"> Company ∞</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+    <!-- Footer -->
+
+  </body>
+</html>

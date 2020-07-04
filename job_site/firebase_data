@@ -1,0 +1,30 @@
+project-479478503614
+
+portal-f4e46:
+
+https://portal-f4e46.firebaseio.com/
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCn9jWEt920Rjnl03EvBDt35Li32RrfVvM",
+    authDomain: "portal-f4e46.firebaseapp.com",
+    databaseURL: "https://portal-f4e46.firebaseio.com",
+    projectId: "portal-f4e46",
+    storageBucket: "portal-f4e46.appspot.com",
+    messagingSenderId: "479478503614",
+    appId: "1:479478503614:web:2b1f774b29883bcdbfa6ef",
+    measurementId: "G-QSPXDJVTCM"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Portal</title>
+
+		<link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='Images/logo/favicon_io/apple-touch-icon.png') }}">
+		<link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='Images/logo/favicon_io/favicon-32x32.png') }}">
+		<link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='Images/logo/favicon_io/favicon-16x16.png') }}">
+		<link rel="manifest" href="{{ url_for('static', filename='Images/logo/favicon_io/site.webmanifest') }}">
+
+
+		<!-- bootstrap links -->
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+		<!--Style sheet link-->
+		<link href="{{ url_for('static', filename = 'css/style.css') }}" rel="stylesheet">
+
+    <link href='https://fonts.googleapis.com/css?family=Amita' rel='stylesheet'>
+
+
+
+	</head>
+
+	<body style="background-color: #E1DEDD;">
+    <!-- scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+		<script src="{{ url_for('static', filename='scripts/verify.js') }}"></script>
+		<!-- Navigation -->
+
+		<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top ">
+		<div class="container-fluid" align="center">
+		<a class="navbr-brand" href="#"><img src="{{ url_for('static', filename='Images/title_logo/favicon.png') }}"></a>
+			<!--<div align="center" class="disp_title">
+				Fire Trade
+			</div>-->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">
+							<button class="btn btn-outline-secondary">
+								<font>Home</font>
+							</button>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		</nav>
+
+<!-- Navigation end-->
+<!--Login form -->
+<div class="container-fluid padding" id="home">
+
+	<div class="row padding mt-4">
+		<div class="col-md-12 col-sm-12 col-xs-12 col-lg-12" align="center">
+			<h3>Welcome to the job search portal</h3>
+		</div>
+	</div>
+
+	<div class="row padding mt-4" >
+
+		<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" >
+
+		</div>
+		<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 rounded" style="background-color : rgba(25, 25, 30, 0.1);)">
+			<span id="mseg" style="color:#6FD917">
+			{% if msg %}
+				{{ msg }}
+			{% endif %}
+			</span>
+			<div class="box_3" align="center">
+				<div class="panel panel-primarry">
+					<div class="panel-heading">
+						<font color="#65B700" size="5px" face="Courier New">
+							<strong></strong>
+						</font>
+					</div>
+				</div>
+
+
+						<!--<div class="input-group">
+							<span class="input-group-text"><i class="fa fa-user"></i></span>
+							<input id="email" type="email" class="form-control" name="email" placeholder="Email"></input>
+						</div>-->
+
+						<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+							<input class="input100" id="email" type="email" name="email" placeholder="Email">
+							<span class="focus-input100"></span>
+							<span class="symbol-input100">
+								<i class="fa fa-envelope" aria-hidden="true"></i>
+							</span>
+						</div>
+
+						<span id="err_mail" style="color:#EC7063"></span>
+
+						<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input class="input100" id="password" type="password" name="password" placeholder="Password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+
+						<!--<div class="input-group mt-2">
+							<span class="input-group-text"><i class="fa fa-lock"></i></span>
+							<input id="password" type="password" class="form-control left-border-none" name="password" placeholder="password"></input>
+						</div>-->
+
+						<div id="err_pass" style="color:#EC7063">
+              {% if us %}
+                {{ us }}
+              {% endif %}
+            </div>
+
+						<div class="container-login100-form-btn">
+							<button class="login100-form-btn" id="login-btn" value="Login" onclick="email_verify()">Sign In</button>
+						</div>
+
+					<!--<div class="ml-0.5 mt-1">
+						<button class="btn btn-secondary" id="login-btn" value="Login" onclick="email_verify()">Sign In</button>
+					</div>-->
+
+				<div class="mt-1">
+					<font color="#65B700"  face="Courier New">
+						<strong>or</strong>
+					</font>
+				</div>
+				<div class="ml-1 mr-1 mt-1">
+					<a class="" href={{ url_for('.home') }}>Create an account/</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" >
+		</div>
+</div>
+
+
+
+</div>
+</body>
+</html>
